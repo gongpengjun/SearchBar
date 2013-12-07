@@ -9,8 +9,7 @@
 @interface SearchBarController () <UISearchBarDelegate>
 
 @property (nonatomic, assign) BOOL up;
-@property (nonatomic, strong) BTSearchBar *mySearchBar;
-@property (nonatomic, strong) IBOutlet UISegmentedControl *contentOptions;
+@property (nonatomic, strong) BTSearchBar *searchBar;
 
 @end
 
@@ -27,29 +26,29 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
 
-	self.mySearchBar = [[BTSearchBar alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.bounds), 44.0)];
-    self.mySearchBar.placeholder = @"搜索目的地、用户、旅程 ...";
-	self.mySearchBar.delegate = self;
-    self.mySearchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;    
+	self.searchBar = [[BTSearchBar alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.bounds), 44.0)];
+    self.searchBar.placeholder = @"搜索目的地、用户、旅程 ...";
+	self.searchBar.delegate = self;
+    self.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;    
     // image background
-    self.mySearchBar.backgroundImage = [UIImage imageWithColor:UIColorFromRGB(0x33cccc)];
+    self.searchBar.backgroundImage = [UIImage imageWithColor:UIColorFromRGB(0x33cccc)];
     // hide search icon
-    [self.mySearchBar setImage:[UIImage imageWithColor:[UIColor whiteColor]] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+    [self.searchBar setImage:[UIImage imageWithColor:[UIColor whiteColor]] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     // search text field background
-    [self.mySearchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"TextFieldBg"] forState:UIControlStateNormal];
-    self.mySearchBar.showsBookmarkButton = YES;
+    [self.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"TextFieldBg"] forState:UIControlStateNormal];
+    self.searchBar.showsBookmarkButton = YES;
     self.up = NO;
-	[self.view addSubview: self.mySearchBar];
+	[self.view addSubview: self.searchBar];
 }
 
 - (void)setUp:(BOOL)up {
     _up = up;
     if(_up) {
-        [self.mySearchBar setImage:[UIImage imageNamed:@"btn_up"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateNormal];
-        [self.mySearchBar setImage:[UIImage imageNamed:@"btn_up_hl"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateHighlighted];
+        [self.searchBar setImage:[UIImage imageNamed:@"btn_up"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateNormal];
+        [self.searchBar setImage:[UIImage imageNamed:@"btn_up_hl"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateHighlighted];
     } else {
-        [self.mySearchBar setImage:[UIImage imageNamed:@"btn_down"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateNormal];
-        [self.mySearchBar setImage:[UIImage imageNamed:@"btn_down_hl"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateHighlighted];
+        [self.searchBar setImage:[UIImage imageNamed:@"btn_down"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateNormal];
+        [self.searchBar setImage:[UIImage imageNamed:@"btn_down_hl"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateHighlighted];
     }
 }
 
@@ -66,7 +65,7 @@
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     NSLog(@"%s,%d",__FUNCTION__,__LINE__);
-	self.mySearchBar.showsCancelButton = YES;
+	self.searchBar.showsCancelButton = YES;
 }
 
 // return NO to not resign first responder
@@ -106,15 +105,15 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     NSLog(@"%s,%d",__FUNCTION__,__LINE__);
-	[self.mySearchBar resignFirstResponder];
+	[self.searchBar resignFirstResponder];
 }
 
 // called when cancel button pressed
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     NSLog(@"%s,%d",__FUNCTION__,__LINE__);
-	[self.mySearchBar resignFirstResponder];
-	self.mySearchBar.showsCancelButton = NO;
+	[self.searchBar resignFirstResponder];
+	self.searchBar.showsCancelButton = NO;
 }
 
 @end
