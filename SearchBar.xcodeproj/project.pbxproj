@@ -39,6 +39,7 @@
 		A9079BAD2BCD4FCFA8157012 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C43359AD18530BB30041D159 /* UIView+Subviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Subviews.h"; sourceTree = "<group>"; };
 		C43359AE18530BB30041D159 /* UIView+Subviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Subviews.m"; sourceTree = "<group>"; };
+		C4538D851884CC2E00692BEF /* OSVersionCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSVersionCheck.h; sourceTree = "<group>"; };
 		C46E902B1851B02A0073F121 /* SearchBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46E902E1851B02A0073F121 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C46E90301851B02B0073F121 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +132,7 @@
 				C46E90541851B05F0073F121 /* UIImage+Color.m */,
 				C43359AD18530BB30041D159 /* UIView+Subviews.h */,
 				C43359AE18530BB30041D159 /* UIView+Subviews.m */,
+				C4538D851884CC2E00692BEF /* OSVersionCheck.h */,
 				C46E906D1851BC200073F121 /* icons */,
 				C46E90351851B02B0073F121 /* Supporting Files */,
 			);

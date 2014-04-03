@@ -5,6 +5,7 @@
 #import "SearchBarController.h"
 #import "UIImage+Color.h"
 #import "BTSearchBar.h"
+#import "OSVersionCheck.h"
 
 @interface SearchBarController () <UISearchBarDelegate>
 
@@ -26,7 +27,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
 
-	self.searchBar = [[BTSearchBar alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.bounds), 44.0)];
+	self.searchBar = [[BTSearchBar alloc] initWithFrame:CGRectMake(0, iOS7?20:0, CGRectGetWidth(self.view.bounds), 44.0)];
     self.searchBar.placeholder = @"搜索目的地、用户、旅程 ...";
 	self.searchBar.delegate = self;
     self.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;    
